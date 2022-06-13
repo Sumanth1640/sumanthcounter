@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Counter</title>
+    <link rel="stylesheet" href="CSS.css" type="text/css">
+</head>
+<body>
+    <div id="S1" class="Sumanth">
+        <div id="S11">Word Counter</div>
+        <div id="S12"><textarea id="textarea" cols="70" rows="10"></textarea></div>
+        <div id="S13" class="Sumanth11">
+            <div id="S131">
+                <span id="S1311">0</span>
+                <div id="S1312">WORDS</div>
+            </div>
+            <div id="S132">
+                <span id="S1321">0</span>
+                <div id="S1322">CHARACTERS</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let textarea=document.getElementById("textarea");
+
+        textarea.addEventListener("input",function(){
+        let t=this.value;
+        let c=t.length;
+        document.getElementById("S1321").innerHTML=c;    
+
+        
+        t=t.trim();
+        let w=t.split(" ");
+        let char=w.filter(function(elm){
+            return elm!="";
+        });
+
+        let w1=char.length;
+        document.getElementById("S1311").innerHTML=w1;
+        });
+        
+    </script>
+</body>
+</html>
